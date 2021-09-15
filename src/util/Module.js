@@ -1,5 +1,7 @@
 const fs = require("fs");
 
+const { Interaction } = require("discord.js");
+
 class Module {
 	constructor(folderDir, Client) {
 		this.name = "";
@@ -111,3 +113,5 @@ class Module {
 		return this._localstorage.forEach(callback); 
 	}
 }
+
+module.exports = Module;
