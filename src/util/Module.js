@@ -48,6 +48,66 @@ class Module {
 	}
 	
 	async processAction(interaction) {
+		let action = null;
 		
+		if(interaction.isCommand() && this._chatActions.has(interaction.name)) action = this._chatActions.get(interaction.name);
+		if(interaction.isContextMenu() && this._messageActions.has(interaction.name)) action = this._messageActions.get(interaction.name);
+		if(interaction.isContextMenu() && this._memberActions.has(interaction.name)) action = this._memberActions.get(interaction.name);
+		
+		if(action == null) return;
+		
+		try {
+			await action.execute(interaction);
+		} catch (err) {
+			if(interaction.replied) {
+				interaction.editReply({ content: "The action encountered an error which has cascaded to the module. Execution has stopped." });
+			} else {
+				interaction.reply({ content: "The action encountered an error which has cascaded to the module. Execution has stopped.", ephemeral: true});
+			}
+		}
+	}
+	
+	getActions(includeEvents = true) {
+		actions = new Map();
+		
+		if(includeEvents) {
+			actions = new Map(this._chatActions, this._messageActions, this._memberActions, this._eventActions);
+		} else {
+			actions = new Map(this._chatActions, this._messageActions, this._memberActions);
+		}
+		
+		return actions;
+	}
+	
+	getClient() {
+		return this._Client;
+	}
+	
+	getData(key) {
+		return this._localstorage.get(key);
+	}
+	
+	hasData(key) {
+		return this._localstorage.has(key);
+	}
+	
+	setData(key, value) {
+		return this._localstorage.set(key, value);
+	}
+	
+	deleteData(key) {
+		return this._localstorage.delete(key);
+	}
+	
+	getDataKeys() {
+		return this._localstorage.keys();
+	}
+	
+	getDataValues() {
+		return this._localstorage.values();
+	}
+	
+	forEachData(callback) {
+		return this._localstorage.forEach(callback); 
 	}
 }
