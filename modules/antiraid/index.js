@@ -8,5 +8,13 @@ module.exports = class extends Module {
         this.enabled = true;
 
         this._retrieveActions();
+        
+        this.setData("levels", {
+            "verifIncrease": 3,
+            "verifStop": 5,
+            "lockdown": 9
+        });
+        
+        this.setData("currentRate", []);
     }
 }
