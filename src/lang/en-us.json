@@ -1,0 +1,60 @@
+{
+    "core": {
+        "sophie": {
+            "cute": "sophie is cute"
+        },
+        "mask": {
+            "_": "mask",
+            "cute": {
+                "_": "mask is cute",
+                "final": "mask is a huge cutie and it will try to deny this, but that'll just prove that it is cute!"
+            }
+        },
+        "cute": {
+            "_": "you're all bucking cuties and nothing can tell me anything different"
+        },
+        "action": {
+            "error": {
+                "notexist": "I'm sorry, I couldn't find that in the action library... I might need to do some reorganising...",
+                "unknown": "I encountered an unknown error while trying to process that action.",
+                "disabled": "The module that action is tied to ({}) is disabled."
+            }
+        }
+    },
+    "general": {
+        "chat": {
+            "estop": {
+                "_": "Emergency Stop: ",
+                "failure": "Failed. Terminating instance...",
+                "success": "Successful. Now in `Safe Mode`."
+            }
+        }
+    },
+    "wordfilter": {
+        "trip": {
+            "warn": "Hey, your most recent message was removed automatically for containing a filtered word (which was `{}`). Please try not to say it again!",
+            "mute": {
+                "_": "**Oooh, you said a bad word!**\n\nYou have been muted for {} for saying a filtered word (which was `{}`).",
+                "link": "https://raw.legodev.com/bad_word.mp4"
+            },
+            "kick": {
+                "_": "**Oooh, you said a bad word!**\n\nYou have been kicked for saying a filtered word (which was `{}`).",
+                "link": "https://raw.legodev.com/bad_word.mp4"
+            }
+        },
+        "chat": {
+            "addword": {
+                "success": "Successfully added `{}` to the filtered words list with punishment set to *{}*.",
+                "failure": "An unknown issue occured while trying to add the word to the filter."
+            },
+            "removeword": {
+                "success": "Successfully removed `{}` from the filtered words list.",
+                "failure": "An unknown issue occured while trying to remove the word from the filter."
+            },
+            "listwords": {
+                "title": "Filtered words - Page {} of {}",
+                "listFormat": "`{}` - {}"
+            }
+        }
+    }
+}
