@@ -37,12 +37,12 @@ module.exports = class extends ChatAction {
 
         if (interaction.options.getBoolean("public") == undefined || interaction.options.getBoolean("public") == false) {
             await interaction.reply({
-                content: "Processing `" + interaction.options.getString("string", true) + "`: " + interaction.options.getString("string", true).split("/").join(" -> ") + "\n```\n" + string + "\n```",
+                content: "Processing `" + interaction.options.getString("string", true) + "` using language file `" + this._Module._Client.LanguageHandler.language + "`: " + interaction.options.getString("string", true).split("/").join(" -> ") + "\n```\n" + string + "\n```",
                 ephemeral: true
             });
         } else {
             await interaction.reply({
-                content: "Processing `" + interaction.options.getString("string", true) + "`: " + interaction.options.getString("string", true).split("/").join(" -> ") + "\n```\n" + string + "\n```"
+                content: "Processing `" + interaction.options.getString("string", true) + "` using language file `" + this._Module._Client.LanguageHandler.language + "`: " + interaction.options.getString("string", true).split("/").join(" -> ") + "\n```\n" + string + "\n```"
             });
         }
     }

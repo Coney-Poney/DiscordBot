@@ -5,7 +5,7 @@ module.exports = class extends Module {
         super(Client, folderDir);
 
         this.name = "WordFilter";
-        this.enabled = true;
+        this.enabled = false;
 
         this._retrieveActions();
     }

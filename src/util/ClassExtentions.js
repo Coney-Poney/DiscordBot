@@ -4,28 +4,6 @@
 */
 
 /**
- * Formats a string with passed arguments.
- * @param {any}
- * @returns {String}
- */
-String.prototype.format = function () {
-    var data = [].slice.call(arguments).splice(1);
-    let str = new String(this);
-
-    data.forEach(arg => {
-        str = str.replace("{}", arg);
-    });
-
-    for (var i = 0; i < data.length; i++) {
-        str = replaceAll(str, "{" + i + "}", data[i]);
-    }
-
-    console.log(str);
-
-    return str;
-}
-
-/**
  * Replace all instances of `initial` with `change`.
  * @param {any} initial The content you want to replace.
  * @param {any} change The content you want to replace with.
@@ -33,6 +11,26 @@ String.prototype.format = function () {
  */
 String.prototype.replaceAll = function (initial, change) {
     return new String(this).split(initial).join(change);
+}
+
+/**
+ * Formats a string with passed arguments.
+ * @param {any}
+ * @returns {String}
+ */
+String.prototype.format = function () {
+    var data = [].slice.call(arguments);
+    let str = new String(this);
+
+    data.forEach(arg => {
+        str = str.replace("{}", arg);
+    });
+
+    for (var i = 0; i < data.length; i++) {
+        str = str.replaceAll("{" + i + "}", data[i]);
+    }
+
+    return str;
 }
 
 /**

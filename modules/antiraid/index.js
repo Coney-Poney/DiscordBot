@@ -5,16 +5,16 @@ module.exports = class extends Module {
         super(Client, folderDir);
 
         this.name = "antiraid";
-        this.enabled = true;
+        this.enabled = false;
 
         this._retrieveActions();
-        
+
         this.setData("levels", {
             "verifIncrease": 3,
             "verifStop": 5,
             "lockdown": 9
         });
-        
+
         this.setData("currentRate", []);
     }
 }

@@ -1,17 +1,17 @@
 {
     "core": {
         "sophie": {
-            "cute": "sophie is cute"
+            "cute": "ˢᵒᵖʰᶦᵉ ᶦˢ ᶜᵘᵗᵉ"
         },
         "mask": {
-            "_": "mask",
+            "_": "ᵐᵃˢᵏ",
             "cute": {
-                "_": "mask is cute",
-                "final": "mask is a huge cutie and it will try to deny this, but that'll just prove that it is cute!"
+                "_": "ᵐᵃˢᵏ ᶦˢ ᶜᵘᵗᵉ",
+                "final": "ᵐᵃˢᵏ ᶦˢ ᵃ ʰᵘᵍᵉ ᶜᵘᵗᶦᵉ ᵃⁿᵈ ᶦᵗ ʷᶦˡˡ ᵗʳʸ ᵗᵒ ᵈᵉⁿʸ ᵗʰᶦˢ, ᵇᵘᵗ ᵗʰᵃᵗ'ˡˡ ʲᵘˢᵗ ᵖʳᵒᵛᵉ ᵗʰᵃᵗ ᶦᵗ ᶦˢ ᶜᵘᵗᵉᵎ"
             }
         },
         "cute": {
-            "_": "you're all bucking cuties and nothing can tell me anything different"
+            "_": "ʸᵒᵘ'ʳᵉ ᵃˡˡ ᵇᵘᶜᵏᶦⁿᵍ ᶜᵘᵗᶦᵉˢ ᵃⁿᵈ ⁿᵒᵗʰᶦⁿᵍ ᶜᵃⁿ ᵗᵉˡˡ ᵐᵉ ᵃⁿʸᵗʰᶦⁿᵍ ᵈᶦᶠᶠᵉʳᵉⁿᵗ"
         },
         "action": {
             "error": {
