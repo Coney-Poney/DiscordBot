@@ -1,6 +1,6 @@
 /*
-    A file which adds utility funtions to existing classes to make life easier
-    Examples include string.format, array.random, array.forEachAsync and other things
+	A file which adds utility funtions to existing classes to make life easier
+	Examples include string.format, array.random, array.forEachAsync and other things
 */
 
 const BookClient = require("../BookClient");
@@ -12,7 +12,7 @@ const BookClient = require("../BookClient");
  * @returns 
  */
 String.prototype.replaceAll = function (initial, change) {
-    return new String(this).split(initial).join(change);
+	return new String(this).split(initial).join(change);
 }
 
 /**
@@ -21,22 +21,22 @@ String.prototype.replaceAll = function (initial, change) {
  * @returns {String}
  */
 String.prototype.format = function () {
-    var data = [].slice.call(arguments);
-    if (Array.isArray(arguments[0]) && arguments.length == 1) {
-        // if first argument is an array and there's no more arguments just use that argument as the entire arguments input
-        data = arguments[0];
-    }
-    let str = new String(this);
+	var data = [].slice.call(arguments);
+	if (Array.isArray(arguments[0]) && arguments.length == 1) {
+		// if first argument is an array and there's no more arguments just use that argument as the entire arguments input
+		data = arguments[0];
+	}
+	let str = new String(this);
 
-    data.forEach(arg => {
-        str = str.replace("{}", arg);
-    });
+	data.forEach(arg => {
+		str = str.replace("{}", arg);
+	});
 
-    for (var i = 0; i < data.length; i++) {
-        str = str.replaceAll("{" + i + "}", data[i]);
-    }
+	for (var i = 0; i < data.length; i++) {
+		str = str.replaceAll("{" + i + "}", data[i]);
+	}
 
-    return str;
+	return str;
 }
 
 /**
@@ -44,7 +44,7 @@ String.prototype.format = function () {
  * @returns {any}
  */
 Array.prototype.random = function () {
-    return this[Math.floor(Math.random() * this.length)];
+	return this[Math.floor(Math.random() * this.length)];
 }
 
 /**
@@ -53,15 +53,15 @@ Array.prototype.random = function () {
  * @returns 
  */
 Array.prototype.forEachAsync = function (callback) {
-    return new Promise(async (res, rej) => {
-        for (var i = 0; i <= this.length; i++) {
-            if (i == this.length) {
-                res();
-            } else {
-                await callback(this[i]);
-            }
-        }
-    });
+	return new Promise(async (res, rej) => {
+		for (var i = 0; i <= this.length; i++) {
+			if (i == this.length) {
+				res();
+			} else {
+				await callback(this[i]);
+			}
+		}
+	});
 }
 
 /**
@@ -70,11 +70,11 @@ Array.prototype.forEachAsync = function (callback) {
  */
 module.exports = (Client) => {
 
-    String.prototype.getLang = function () {
-        try {
-            return Client.LanguageHandler.get(this.toString());
-        } catch (error) {
-            return null;
-        }
-    }
+	String.prototype.getLang = function () {
+		try {
+			return Client.LanguageHandler.get(this.toString());
+		} catch (error) {
+			return null;
+		}
+	}
 }

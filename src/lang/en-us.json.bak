@@ -63,7 +63,7 @@
 			"notexist": "The {} module does not exist.",
 			"state": "The {} module is `{}`.",
 			"already": "The {} module is already disabled.",
-			"success": "Successfully {} the {} module."
+			"success": "Successfully {} the {} module.",
 		}
 	}
 }

@@ -39,7 +39,7 @@ class Module {
 					break;
 				case "event":
 					this._eventActions.set(action.name, action);
-					this._Client.addListener(action.event, action.execute);
+					this._Client.addListener(action.event, action.preExecute);
 					break;
 				default:
 					console.warn("Action type for action named '" + action.name + "' is not recognised, ignoring.");
@@ -69,7 +69,6 @@ class Module {
 			actions = new Map(this._chatActions, this._messageActions, this._memberActions);
 		}
 
-		console.debug(actions);
 		return actions;
 	}
 
