@@ -33,19 +33,19 @@ module.exports = class extends ChatAction {
     }
 
     async execute(interaction) {
-        await interaction.options.getUser("member").send({
-            content: interaction.options.getString("string").replaceAll("/n", "\n") || "wtf required option empty?"
+        interaction.options.getUser("member", true).send({
+            content: interaction.options.getString("message", true)
         }).then(async message => {
             await interaction.reply({
-                content: "Sent message to recipient!",
+                content: "moderation/chat/dmuser/success".getLang(),
                 ephemeral: true
             });
         }).catch(async error => {
-			console.warn("Error while trying to send dm to user `+interaction.options.getUser("member").id+"`: ", error);
+			console.warn("Error while trying to send dm to user `{}`: {}".format(interaction.options.getUser("member", true).id, error));
             await interaction.reply({
-				content: "Something went wrong while trying to send that message. Maybe the user has DMs disabled or the bot blocked?",
-				ephemeral: true
-			});
+                content: "moderation/chat/dmuser/failure".getLang(),
+                ephemeral: true
+            });
         });
     }
 }
