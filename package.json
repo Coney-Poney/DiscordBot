@@ -27,9 +27,15 @@
   },
   "homepage": "https://github.com/LegoDevStudio/TwiBot#readme",
   "dependencies": {
+    "@discordjs/opus": "^0.5.3",
     "@discordjs/rest": "^0.1.0-canary.0",
+    "@discordjs/voice": "^0.7.5",
+    "@sentry/node": "^6.15.0",
+    "@sentry/tracing": "^6.15.0",
     "discord-api-types": "^0.23.1",
     "discord.js": "^13.1.0",
+    "ffmpeg-static": "^4.4.0",
+    "libsodium-wrappers": "^0.7.9",
     "mongodb": "^4.1.2",
     "node_pronouns": "^1.0.3",
     "superagent": "^6.1.0"

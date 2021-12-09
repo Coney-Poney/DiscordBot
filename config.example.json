@@ -1,0 +1,23 @@
+{
+    "token": "DISCORD TOKEN",
+    "dburl": "DATABASE URL",
+    "xenforo": {
+        "url": "XENFORO API URL",
+        "key": "XENFORO API KEY"
+    },
+    "roles": {
+        "permissions": {
+            "owner": "OWNER ROLE",
+            "admin": "ADMIN ROLE",
+            "mod": "MOD ROLE",
+            "verified": "VERIFIED ROLE"
+        },
+        "pronouns": {
+            "DISCORD ROLE ID": "pro/noun",
+        },
+        "punishment": {
+            "mute": "DISCORD ROLE ID"
+        }
+    },
+    "defaultLang": "en-us"
+}

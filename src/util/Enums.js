@@ -15,14 +15,3 @@ exports.PermissionType = {
     ROLE: 1,
     USER: 2
 }
-
-exports.WordFilterPunishment = {
-    WARN: 1,
-    MUTE_1H: 2,
-    MUTE_2H: 3,
-    MUTE_6H: 4,
-    MUTE_12H: 5,
-    MUTE_24H: 6,
-    MUTE_48H: 8,
-    KICK: 9
-}

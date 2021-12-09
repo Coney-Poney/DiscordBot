@@ -36,18 +36,18 @@ module.exports = class extends ChatAction {
                 return await interaction.reply({
                     embeds: [
                         {
-                            title: "Forum Account Creation Failed",
-                            description: "You already have a forum account. Did you forget your email?",
+                            title: "forums/chat/register/alreadyexists/title".getLang(),
+                            description: "forums/chat/register/alreadyexists/description".getLang(),
                             color: 16771840,
                             fields: [
                                 {
-                                    name: "Email",
+                                    name: "forums/chat/register/alreadyexists/fields/email/title".getLang(),
                                     value: useracc.email,
                                     inline: true
                                 },
                                 {
-                                    name: "Website URL",
-                                    value: "https://forums.coneyponey.com",
+                                    name: "forums/chat/register/alreadyexists/fields/website/title".getLang(),
+                                    value: "forums/chat/register/alreadyexists/fields/website/description".getLang(),
                                     inline: true
                                 }
                             ]
@@ -59,18 +59,18 @@ module.exports = class extends ChatAction {
                 if (err.code == 10062) return await interaction.member.user.send({
                     embeds: [
                         {
-                            title: "Forum Account Creation Failed",
-                            description: "You already have a forum account. Did you forget your email?",
+                            title: "forums/chat/register/alreadyexists/title".getLang(),
+                            description: "forums/chat/register/alreadyexists/description".getLang(),
                             color: 16771840,
                             fields: [
                                 {
-                                    name: "Email",
+                                    name: "forums/chat/register/alreadyexists/fields/email/title".getLang(),
                                     value: useracc.email,
                                     inline: true
                                 },
                                 {
-                                    name: "Website URL",
-                                    value: "https://forums.coneyponey.com",
+                                    name: "forums/chat/register/alreadyexists/fields/website/title".getLang(),
+                                    value: "forums/chat/register/alreadyexists/fields/website/description".getLang(),
                                     inline: true
                                 }
                             ]
@@ -87,23 +87,23 @@ module.exports = class extends ChatAction {
                 await interaction.reply({
                     embeds: [
                         {
-                            title: "Forum Account Created!",
-                            description: "Your forum account has been created! Your infomation to log in is below.\nPlease change the provided email address and password once you log in!",
+                            title: "forums/chat/register/success/title".getLang(),
+                            description: "forums/chat/register/success/description".getLang(),
                             color: 6749952,
                             fields: [
                                 {
-                                    name: "Email",
+                                    name: "forums/chat/register/success/fields/email/title".getLang(),
                                     value: useraccount.email,
                                     inline: true
                                 },
                                 {
-                                    name: "Password",
+                                    name: "forums/chat/register/success/fields/password/title".getLang(),
                                     value: useraccount.password,
                                     inline: true
                                 },
                                 {
-                                    name: "Website URL",
-                                    value: "https://forums.coneyponey.com",
+                                    name: "forums/chat/register/success/fields/website/title".getLang(),
+                                    value: "forums/chat/register/success/fields/website/description".getLang(),
                                     inline: false
                                 }
                             ]
@@ -115,23 +115,23 @@ module.exports = class extends ChatAction {
                 if (err.code == 10062) await interaction.member.user.send({
                     embeds: [
                         {
-                            title: "Forum Account Created!",
-                            description: "Your forum account has been created! Your infomation to log in is below.\nPlease change the provided email address and password once you log in!",
+                            title: "forums/chat/register/success/title".getLang(),
+                            description: "forums/chat/register/success/description".getLang(),
                             color: 6749952,
                             fields: [
                                 {
-                                    name: "Email",
+                                    name: "forums/chat/register/success/fields/email/title".getLang(),
                                     value: useraccount.email,
                                     inline: true
                                 },
                                 {
-                                    name: "Password",
+                                    name: "forums/chat/register/success/fields/password/title".getLang(),
                                     value: useraccount.password,
                                     inline: true
                                 },
                                 {
-                                    name: "Website URL",
-                                    value: "https://forums.coneyponey.com",
+                                    name: "forums/chat/register/success/fields/website/title".getLang(),
+                                    value: "forums/chat/register/success/fields/website/description".getLang(),
                                     inline: false
                                 }
                             ]
@@ -145,8 +145,8 @@ module.exports = class extends ChatAction {
                 await interaction.reply({
                     embeds: [
                         {
-                            title: "Forum Account Creation Failed",
-                            description: "Something went wrong.. somewhere\nJust tell sophie (the one with coney poney operator role)",
+                            title: "forums/chat/register/error/title".getLang(),
+                            description: "forums/chat/register/error/description".getLang(),
                             color: 16711680
                         }
                     ],
@@ -156,8 +156,8 @@ module.exports = class extends ChatAction {
                 if (err.code == 10062) await interaction.member.user.send({
                     embeds: [
                         {
-                            title: "Forum Account Creation Failed",
-                            description: "Something went wrong.. somewhere\nJust tell sophie (the one with coney poney operator role)",
+                            title: "forums/chat/register/error/title".getLang(),
+                            description: "forums/chat/register/error/description".getLang(),
                             color: 16711680
                         }
                     ]

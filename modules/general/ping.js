@@ -11,9 +11,9 @@ module.exports = class extends ChatAction {
 
     async execute(interaction) {
         let time0 = Date.now();
-        await interaction.reply({ content: "Generating..." });
+        await interaction.reply({ content: "general/chat/ping/gen".getLang() });
         await interaction.editReply({
-            content: "Pong!\nAPI Ping: " + (Date.now() - time0) + "ms.\nGateway Ping: " + this._Module._Client.ws.ping + "ms."
+            content: "general/chat/ping/finish".getLang().format(Date.now() - time0, this._Module._Client.ws.ping)
         });
     }
 }

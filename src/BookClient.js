@@ -1,5 +1,3 @@
-require("./util/ClassExtentions");
-
 /*
     I'm Twilight Sparkle!
 */
@@ -14,6 +12,7 @@ const { MongoClient } = require('mongodb');
 
 const LangHandler = require("./util/LangHandler");
 const PronounHandler = require("./util/PronounHandler");
+const loadClientDependantClassModifications = require("./util/ClassExtentions");
 
 class BookClient extends Client {
     constructor(config, options) {
@@ -34,6 +33,8 @@ class BookClient extends Client {
 
         this.addListener("interactionCreate", this._interactionHandler);
         this.addListener("ready", this._ready);
+
+        loadClientDependantClassModifications(this);
 
         this.login(this.config.token);
     }
@@ -160,11 +161,11 @@ class BookClient extends Client {
     async _interactionHandler(interaction) {
         try {
             console.log(interaction);
-            if (!this._allActions.has(interaction.commandName)) return interaction.reply({ content: await this.LanguageHandler.get("core/action/error/notexist"), ephemeral: true });
+            if (!this._allActions.has(interaction.commandName)) return interaction.reply({ content: "core/action/error/notexist".getLang(), ephemeral: true });
 
             let action = this._allActions.get(interaction.commandName);
 
-            if (!action._Module.enabled) return interaction.reply({ content: (await this.LanguageHandler.get("core/action/error/disabled")).format(action._Module.name), ephemeral: true });
+            if (!action._Module.enabled) return interaction.reply({ content: "core/action/error/disabled".getLang().format(action._Module.name), ephemeral: true });
 
             await action._Module.processAction(interaction);
         } catch (error) {
@@ -172,8 +173,8 @@ class BookClient extends Client {
             console.error(error);
             if (interaction.ephemeral) return; // Interaction was ephermal, cannot inform user of failure.
 
-            if (interaction.deferred) interaction.followUp({ content: await this.LanguageHandler.get("core/action/error/unknown") });
-            if (interaction.replied) interaction.editReply({ content: await this.LanguageHandler.get("core/action/error/unknown") });
+            if (interaction.deferred) interaction.followUp({ content: "core/action/error/unknown".getLang() });
+            if (interaction.replied) interaction.editReply({ content: "core/action/error/unknown".getLang() });
         }
     }
 

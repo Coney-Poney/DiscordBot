@@ -3,6 +3,8 @@
     Examples include string.format, array.random, array.forEachAsync and other things
 */
 
+const BookClient = require("../BookClient");
+
 /**
  * Replace all instances of `initial` with `change`.
  * @param {any} initial The content you want to replace.
@@ -20,6 +22,10 @@ String.prototype.replaceAll = function (initial, change) {
  */
 String.prototype.format = function () {
     var data = [].slice.call(arguments);
+    if (Array.isArray(arguments[0]) && arguments.length == 1) {
+        // if first argument is an array and there's no more arguments just use that argument as the entire arguments input
+        data = arguments[0];
+    }
     let str = new String(this);
 
     data.forEach(arg => {
@@ -56,4 +62,19 @@ Array.prototype.forEachAsync = function (callback) {
             }
         }
     });
+}
+
+/**
+ * Create class extensions which rely on knowing stuff from the Client.
+ * @param {BookClient} Client 
+ */
+module.exports = (Client) => {
+
+    String.prototype.getLang = function () {
+        try {
+            return Client.LanguageHandler.get(this.toString());
+        } catch (error) {
+            return null;
+        }
+    }
 }

@@ -31,27 +31,27 @@ class LangHandler {
      * @returns {Promise<String>} The string, or rejects the promise with an error on failure.
      */
     get(path) {
-        return new Promise(async (res, rej) => {
-            let splitPath = path.split("/");
-            let content = langFile;
+        let splitPath = path.split("/");
+        let content = langFile;
 
-            await splitPath.forEachAsync(pathPart => {
-                content = content[pathPart];
+        splitPath.forEach(pathPart => {
+            content = content[pathPart];
 
-                if (content == undefined) {
-                    rej("The string path '" + path + "' does not resolve, stuck at '" + pathPart + "'.");
-                } else {
-                    if (path.endsWith("/" + pathPart)) {
-                        if (typeof content != "string") {
-                            if (content["_"] == undefined) return rej("The string path '" + path + "' returns an object, but doesn't have a '_' (header) field and thus has no content.");
-                            res(content["_"]);
-                        } else {
-                            res(content);
-                        }
+            if (content == undefined) {
+                throw new ReferenceError("The string path '" + path + "' does not resolve, stuck at '" + pathPart + "'.");
+            } else {
+                if (path.endsWith("/" + pathPart)) {
+                    if (typeof content != "string") {
+                        if (content["_"] == undefined) throw new TypeError("The string path '" + path + "' returns an object, but doesn't have a '_' (header) field and thus is not a string.");
+                        content = content["_"];
+                    } else {
+                        // content already set to desired value
                     }
                 }
-            });
+            }
         });
+
+        return content;
     }
 }
 
