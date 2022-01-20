@@ -12,14 +12,14 @@ module.exports = class extends ChatAction {
 	async execute(interaction) {
 		//i am so sorry leah ;-; - bitl
 		await interaction.reply({ content: 
-		"moderation/rules/one" +
-		"moderation/rules/two" + 
-		"moderation/rules/three" + 
-		"moderation/rules/four" +
-		"moderation/rules/five" +
-		"moderation/rules/six" +
-		"moderation/rules/seven" +
-		"moderation/rules/eight" +
-		"moderation/rules/otherinfo"});
+		"moderation/rules/one".getLang() +
+		"moderation/rules/two".getLang() + 
+		"moderation/rules/three".getLang() + 
+		"moderation/rules/four".getLang() +
+		"moderation/rules/five".getLang() +
+		"moderation/rules/six".getLang() +
+		"moderation/rules/seven".getLang() +
+		"moderation/rules/eight".getLang() +
+		"moderation/rules/otherinfo".getLang()});
 	}
 }
