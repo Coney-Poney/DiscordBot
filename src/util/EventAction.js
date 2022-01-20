@@ -1,3 +1,4 @@
+const { RichPresenceAssets } = require("discord.js");
 const Action = require("./Action");
 
 class EventAction extends Action {
@@ -7,11 +8,6 @@ class EventAction extends Action {
 		this.type = "event";
 
 		this.event = "";
-	}
-
-	async preExecute() {
-		// just make sure the module is enabled
-		if (this._Module.enabled) return await this.execute(...arguments);
 	}
 
 	async execute() {

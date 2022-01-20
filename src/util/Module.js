@@ -39,7 +39,7 @@ class Module {
 					break;
 				case "event":
 					this._eventActions.set(action.name, action);
-					this._Client.addListener(action.event, action.preExecute);
+					this._Client.addListener(action.event, action.execute);
 					break;
 				default:
 					console.warn("Action type for action named '" + action.name + "' is not recognised, ignoring.");

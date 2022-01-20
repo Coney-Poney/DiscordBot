@@ -33,7 +33,7 @@
     "@sentry/node": "^6.15.0",
     "@sentry/tracing": "^6.15.0",
     "discord-api-types": "^0.23.1",
-    "discord.js": "^13.1.0",
+    "discord.js": "github:Jiralite/discord.js#timeouts",
     "ffmpeg-static": "^4.4.0",
     "libsodium-wrappers": "^0.7.9",
     "mongodb": "^4.1.2",
