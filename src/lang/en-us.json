@@ -59,6 +59,17 @@
 		"say": {
 			"success": "Succesfully sent message into chat."
 		}
+		"rules": {
+			"one": "1. Swearing is fine but no slurs.\n"
+			"two": "2. Keep the edginess to a minimum (no self-deprecating, this includes denying being cute).\n"
+			"three": "3. Transphobia, homophobia, exclusionism, etc. are strictly prohibited.\n"
+			"four": "4. Keep the peace and if you have a problem, please contact TwilySparky#6666 (Coney Pony Empress), any of the Admins (Coney Pony Princesses), or any of the Moderators (Coney Pony Guards).\n"
+			"five": "5. No NSFW or obscene content. If you're not sure, then don't post it. Keep it PG-13. We are strictly a SFW server with no hidden NSFW channels. We are fairly relaxed on our rules but we might need to take a harder stance on those who want to subvert the rules.\n"
+			"six": "6. NFT/Crypto discussion is BANNED from this server due to the toxic nature it sparks. Please go elsewhere for discussion based on Crypto/NFTs.\n"
+			"seven": "7. Pirated content/Warez is not allowed.\n"
+			"eight": "8. **Become pony.**\n"
+			"otherinfo": "\nDISCORD INVITE LINK: https://discord.gg/coneyponey\nGUILDED INVITE LINK (BACKUP): https://www.guilded.gg/i/kbZGqn5k?cid=2df89a86-1ad2-43ff-8a2a-1e300ab96750&intent=chat\n\n(Pony emojis made by pastacrylic#2308)\n#recommended-servers is for servers only approved by TwilySparky#6666"
+		}
 	},
 	"development": {
 		"getString": "Processing `{}` using language file `{}`: {}\n```\n{}\n```",
