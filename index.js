@@ -1,3 +1,4 @@
+/* Discord Bot */
 const BookClient = require("./src/BookClient");
 const { Intents } = require("discord.js");
 
@@ -12,3 +13,13 @@ const Client = new BookClient(require("./config.json"), {
 		//Intents.FLAGS.GUILD_VOICE_STATES
 	]
 });
+
+/* Discord API */
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+	res.send("hi!");
+});
+
+app.listen(80);

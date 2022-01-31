@@ -5,6 +5,7 @@ class MemberAction extends Action {
 		super(Module);
 
 		this.type = "member";
+		this.logged = false;
 
 		this.permissions = [];
 	}

@@ -5,6 +5,7 @@ class MessageAction extends Action {
 		super(Module);
 
 		this.type = "message";
+		this.logged = false;
 
 		this.permissions = [];
 	}

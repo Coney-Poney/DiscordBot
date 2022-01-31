@@ -7,6 +7,7 @@ class ChatAction extends Action {
 		this.description = "";
 
 		this.type = "chat";
+		this.logged = false;
 
 		this.options = [];
 		this.permissions = [];

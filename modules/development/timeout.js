@@ -44,7 +44,7 @@ module.exports = class extends ChatAction {
     }
 
     async execute(interaction) {
-        interaction.options.getMember("member", true).timeout(new Date(interaction.options.getString("time", true)), interaction.options.getString("reason"));
+        interaction.options.getMember("member", true).timeout(new Date(Date.now() + parseInt(interaction.options.getString("time", true))));
         interaction.reply({
             content: "a",
             ephemeral: true

@@ -8,6 +8,8 @@ module.exports = class extends ChatAction {
 		this.name = "dmuser";
 		this.description = "Send a DM to a user";
 
+		this.logged = true;
+
 		this.options = [
 			{
 				name: "member",

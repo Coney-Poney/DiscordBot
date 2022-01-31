@@ -5,6 +5,22 @@
 				"notexist": "I'm sorry, but it appears that action does not exist.",
 				"unknown": "I encountered an unknown error while trying to process that action.",
 				"disabled": "The module that action is tied to ({}) is disabled."
+			},
+			"log": {
+				"title": "Use of Action",
+				"actionname": {
+					"title": "Action Name"
+				},
+				"actiontype": {
+					"title": "Action Type"
+				},
+				"actionchannel": {
+					"title": "Channel"
+				},
+				"actionoptions": {
+					"title": "Action Options"
+				},
+				"footer": "Coney Poney MLP Community"
 			}
 		}
 	},

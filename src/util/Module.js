@@ -57,6 +57,67 @@ class Module {
 
 		if (action == null) return;
 
+		if (action.logged) {
+			let options = [];
+
+			interaction.options.data.forEach(option => {
+				let str = "{} ({}) - {}".format(option.name, option.type);
+
+				if (["STRING", "INTEGER", "BOOLEAN", "NUMBER"].includes(option.type)) {
+					str = str.format(option.value);
+				}
+
+				if (option.type == "USER") str = str.format("<@" + option.user.id + ">");
+				if (option.type == "CHANNEL") str = str.format("<#" + option.channel.id + ">");
+				if (option.type == "ROLE") str = str.format("<@&" + option.role.id + ">");
+
+				options.push(str);
+			})
+
+			let msgData = {
+				"embeds": [
+					{
+						"title": "core/action/log/title".getLang(),
+						"description": "",
+						"color": 0x00FFFF,
+						"fields": [
+							{
+								"name": "core/action/log/actionname/title".getLang(),
+								"value": action.name,
+								"inline": true
+							},
+							{
+								"name": "core/action/log/actiontype/title".getLang(),
+								"value": action.type,
+								"inline": true
+							},
+							{
+								"name": "core/action/log/actionchannel/title".getLang(),
+								"value": interaction.channel == undefined ? "**NOT APPLICABLE**" : "<#" + interaction.channel.id + ">",
+								"inline": true
+							},
+							{
+								"name": "core/action/log/actionoptions/title".getLang(),
+								"value": interaction.type == "APPLICATION_COMMAND" ? options.join("\n") : "**NOT APPLICABLE**"
+							}
+						],
+						"timestamp": Date.now(),
+						"author": {
+							"name": interaction.member.user.tag,
+							"iconURL": interaction.member.displayAvatarURL()
+						},
+						"footer": {
+							"text": "core/action/log/footer".getLang()
+						}
+					}
+				]
+			}
+
+			console.log(msgData);
+
+			(await interaction.guild.channels.fetch(this._Client.config.channels.actionlog)).send(msgData);
+		}
+
 		await action.execute(interaction);
 	}
 

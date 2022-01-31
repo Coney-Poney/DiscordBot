@@ -8,6 +8,8 @@ module.exports = class extends ChatAction {
 		this.name = "say";
 		this.description = "Say something as Coney Poney";
 
+		this.logged = true;
+
 		this.options = [
 			{
 				name: "message",
@@ -33,7 +35,17 @@ module.exports = class extends ChatAction {
 				type: Enums.PermissionType.ROLE,
 				id: this._Module._Client.config.roles.permissions.admin,
 				permission: true
-			}
+			}/*,
+			{
+				type: Enums.PermissionType.USER,
+				id: "186730180872634368",
+				permission: false
+			},
+			{
+				type: Enums.PermissionType.USER,
+				id: "460979673552257055",
+				permission: true
+			}*/
 		]
 	}
 
