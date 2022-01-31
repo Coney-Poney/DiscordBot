@@ -79,6 +79,27 @@
 		}
 	},
 	"moderation": {
+		"core": {
+			"actionembed": {
+				"title": "Case #{} - {}",
+				"fields": {
+					"moderator": {
+						"title": "Moderator"
+					},
+					"action": {
+						"title": "Action"	
+					},
+					"duration": {
+						"title": "Duration",
+						"defaultvalue": "Forever"
+					},
+					"reason": {
+						"title": "Reason",
+						"defaultValue": "Reason"
+					}
+				}
+			},
+		},
 		"dmuser": {
 			"success": "Sent message to recipient!",
 			"failure": "Something went wrong while trying to send that message. Maybe the user has DMs disabled or the bot blocked?"
