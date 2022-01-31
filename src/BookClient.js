@@ -24,10 +24,10 @@ class BookClient extends Client {
 		this.LanguageHandler = new LangHandler(this);
 		this.PronounHandler = new PronounHandler(this);
 
-		this._DBClient = new MongoClient(this.config.dburl);
+		this._DBClient = new MongoClient(process.env.DBURL);
 		this._DBClient.connect();
 
-		this._REST = new REST({ version: '9' }).setToken(this.config.token);
+		this._REST = new REST({ version: '9' }).setToken(process.env.DISCORDTOKEN);
 
 		this._allActions = new Map();
 
@@ -36,7 +36,7 @@ class BookClient extends Client {
 
 		loadClientDependantClassModifications(this);
 
-		this.login(this.config.token);
+		this.login(process.env.DISCORDTOKEN);
 	}
 
 	_ready() {

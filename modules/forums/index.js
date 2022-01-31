@@ -27,14 +27,14 @@ module.exports = class extends Module {
 			let email = id + "@cone.coneyponey.com";
 			let password = this._generateXenforoPassword;
 
-			await superagent.post(this._Client.config.xenforo.url)
+			await superagent.post(process.env.XENFOROURL)
 				.type('application/x-www-form-urlencoded')
 				.send({
 					"action": "register",
 					"username": username,
 					"password": password,
 					"email": email,
-					"hash": this._Client.config.xenforo.key,
+					"hash": process.env.XENFOROKEY,
 					"group": "Registered",
 					"custom_fields": "discord=" + id
 				});
@@ -60,12 +60,12 @@ module.exports = class extends Module {
 
 			console.log(user);
 
-			return (await superagent.post(this._Client.config.xenforo.url)
+			return (await superagent.post(process.env.XENFOROURL)
 				.type('application/x-www-form-urlencoded')
 				.send({
 					"action": "getUser",
 					"value": user.forum,
-					"hash": this._Client.config.xenforo.key
+					"hash": process.env.XENFOROKEY
 				})).body;
 		} catch (error) {
 			if (error.body.error == 4) return undefined;
